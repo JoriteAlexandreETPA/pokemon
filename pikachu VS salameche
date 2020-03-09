@@ -1,0 +1,335 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int rand_a_b(int a, int b){
+			return rand()%(b-a) +a;
+}
+
+
+int main(){
+	float PVS = 300.0;
+	int actionS = 0;
+	int PMS = 150;
+	int toxik = 0;
+	int griffe = 0;
+	int lancef = 0;
+	int draco = 0;
+
+	float PVP = 300.0;
+	int actionP = 0;
+	int PMP = 150;
+	int toxikP = 0;
+	int vivP = 0;
+	int eclaireP = 0;
+	int fatalP = 0;
+	
+	int tour = 100;
+ 	int antidote = 2;
+
+ 	printf("Un Pikachu sauvage apparait \n\n");
+
+	for (tour = 100 ; tour >= 0 ; tour--){
+		printf("Choisir une attaque 1 (Griffe), 2 (lance-flamme), 3 (Draco-rage), 4 (toxik) ou un heal 9 (Antidote)\n\n");
+		scanf("%d", &actionS);
+		
+		
+		int actionP = rand_a_b(5,9);
+
+
+		if (toxik == 1 && PMS > 0){
+			PVP -= 4;
+			printf("Pikachu subit toxik et perd 4 PV\n");
+		}
+
+		if (toxikP == 5 && PMP > 0){
+			PVS -= 4;
+			printf("Salamèche subit toxik et perd 4 PV\n");
+		}
+
+		if (PMS <= 0 && actionS == 1){
+			printf("Salamèche n'a plus de PM\n");
+		}	
+
+		if (PMS <= 0 && actionS == 2){
+			printf("Salamèche n'a plus de PM\n");
+		}
+
+		if (PMS <= 0 && actionS == 3){
+			printf("Salamèche n'a plus de PM\n");
+		}	
+
+		if (PMS <= 0 && actionS == 4){
+			printf("Salamèche n'a plus de PM\n");
+		}
+		
+		if (actionS == 1){
+
+			if (actionP == 5){
+				PMS -= 10;
+				(PVP = PVP -40.0);
+				printf("Salamèche attaque Griffe\n\n");
+				printf("PV de pikachu = %f \n",PVP);		
+				PMP -= 10;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Vive-attaque\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+
+			else if (actionP == 6){
+				PMS -= 10;
+				(PVP = PVP -40.0);
+				printf("Salamèche attaque Griffe\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 20;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Eclair\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+
+			else if (actionP == 7){
+				PMS -= 10;
+				(PVP = PVP -40.0);
+				printf("Salamèche attaque Griffe\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 30;
+				(PVS = PVS -110.0);
+				printf("Pikachu attaque Fatal foudre\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+			
+			else if (actionP == 8){
+				PMS -= 10;
+				(PVP = PVP -40.0);
+				printf("Salamèche attaque Griffe\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 10;
+				(PVP = PVP -4.0);
+				toxikP = 1;
+				printf("Pikachu attaque toxik\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+
+		}
+
+		else if (actionS == 2){
+
+
+			if (actionP == 5){
+				PMS -= 22;
+				(PVP = PVP -90.0);
+				printf("Salamèche attaque lance-flamme\n\n");
+				printf("PV de pikachu = %f \n",PVP);	
+				PMP -= 10;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Vive-attaque\n");
+				printf("PV de Salamèche =%f \n",PVS);
+
+			}
+
+			else if (actionP == 6){
+				PMS -= 22;
+				(PVP = PVP -90.0);
+				printf("Salamèche attaque lance-flamme\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 20;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Eclair\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+
+			else if (actionP == 7){
+				PMS -= 22;
+				(PVP = PVP -90.0);
+				printf("Salamèche attaque lance-flamme\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 30;
+				(PVS = PVS -110.0);
+				printf("Pikachu attaque Fatal foudre\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+			
+			else if (actionP == 8){
+				PMS -= 22;
+				(PVP = PVP -90.0);
+				printf("Salamèche attaque lance-flamme\n\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 10;
+				(PVP = PVP -4.0);
+				toxikP = 1;
+				printf("Pikachu attaque toxik\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+		}
+		
+		else if (actionS == 3){
+
+
+			if (actionP == 5){
+				PMS -= 30;
+				(PVP = PVP -120.0);
+				printf("Salamèche attaque Draco-Rage\n");
+				printf("PV de pikachu = %f \n",PVP);	
+				PMP -= 10;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Vive-attaque\n");
+				printf("PV de Salamèche =%f \n",PVS);
+
+			}
+
+			else if (actionP == 6){
+				PMS -= 30;
+				(PVP = PVP -120.0);
+				printf("Salamèche attaque Draco-Rage\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 20;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Eclair\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+
+			else if (actionP == 7){
+				PMS -= 30;
+				(PVP = PVP -120.0);
+				printf("Salamèche attaque Draco-Rage\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 30;
+				(PVS = PVS -110.0);
+				printf("Pikachu attaque Fatal foudre\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+			
+			else if (actionP == 8){
+				PMS -= 30;
+				(PVP = PVP -120.0);
+				printf("Salamèche attaque Draco-Rage\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 10;
+				(PVP = PVP -4.0);
+				toxikP = 1;
+				printf("Pikachu attaque toxik\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+		}
+		
+		else if (actionS == 4 && PMS>0){
+			
+			if (actionP == 5){		
+				PMS -= 10;
+				toxik = 1;
+				printf("Salamèche attaque toxik\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 10;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Vive-attaque\n");
+				printf("PV de Salamèche =%f \n",PVS);
+
+			}
+			
+			else if (actionP == 6){
+				PMS -= 10;
+				toxik = 1;
+				printf("Salamèche attaque toxik\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 20;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Eclair\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+
+			else if (actionP == 7){
+				PMS -= 10;
+				toxik = 1;
+				printf("Salamèche attaque toxik\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 30;
+				(PVS = PVS -110.0);
+				printf("Pikachu attaque Fatal foudre\n");
+				printf("PV de Salamèche = %f \n",PVS);
+
+			}
+
+			else if (actionP == 8){
+				PMS -= 10;
+				toxik = 1;
+				printf("Salamèche attaque toxik\n");
+				printf("PV de pikachu = %f \n",PVP);
+				PMP -= 10;
+				(PVP = PVP -4.0);
+				toxikP = 1;
+				printf("Pikachu attaque toxik\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+		}
+
+		else if (actionS == 9 && PMS>0){
+			
+			toxik = 0;
+
+			if (actionP == 5){		
+				printf("Vous donnez un antidote a Salamèche\n");
+				PMP -= 10;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Vive-attaque\n");
+				printf("PV de Salamèche =%f \n",PVS);
+			}
+			
+			else if (actionP == 6){
+				printf("Vous donnez un antidote a Salamèche\n");
+				PMP -= 20;
+				(PVS = PVS -40.0);
+				printf("Pikachu attaque Eclair\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+
+			else if (actionP == 7){
+				printf("Vous donnez un antidote a Salamèche\n");
+				PMP -= 30;
+				(PVS = PVS -110.0);
+				printf("Pikachu attaque Fatal foudre\n");
+				printf("PV de Salamèche = %f \n",PVS);
+			}
+
+			else if (actionP == 8){
+				PMP -= 10;
+				toxikP = 1;
+				antidote -=1;
+				printf("Vous donnez un antidote a Salamèche\n");
+				printf("Pikachu attaque toxik\n");
+				printf("C'est inefficace, vous vous etes soigne\n");
+		      	printf("Salamèche ne ressent plus les effets de toxik\n");
+		    	 
+		    }
+		      	
+		    else if (actionP == 9){
+				antidote -=1;
+				printf("Vous donnez un antidote a Salamèche\n");
+				printf("Pikachu utilise un antidote\n");
+
+			   printf("Salamèche ne ressent plus les effets de toxik\n");
+		       printf("Pikachu ne ressent plus les effets de toxik\n");   
+		    }
+		}
+
+		if (PMS >= 100){
+			PMS += 1;
+		}
+
+		if (PVP <= 0){
+			printf("Pikachu est K.O \n");
+			break;
+		}
+
+		if (PVS <= 0){
+			printf("Salamèche est K.O \n");
+			break;
+		}
+	}
+	return 0;	
+}
